@@ -4,10 +4,16 @@ module.exports =  {
     init: function() {
         this.bindings();
         this.setValues();
+        this.onScroll();
     },
 
     bindings: function() {
         $(window).scroll(function() {
+            this.onScroll();
+        }.bind(this));
+    
+        $(window).resize(function() {
+            this.setValues();
             this.onScroll();
         }.bind(this));
     },

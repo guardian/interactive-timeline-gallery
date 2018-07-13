@@ -1,6 +1,18 @@
 <div class='uit-slide uit-slide--{{ @key }}'>
     <div class='uit-slide-scroll' data-slide='{{ @key }}'></div>
     <div class='uit-slide-panel'>
-        {{ title }}
+        <div class='uit-container'>
+            <div class='uit-slide-panel__content'>
+                <span class='uit-slide-panel__content__inner'>
+                    <span class='uit-slide-panel__title'>
+                        {{ title }}
+                    </span>
+                    <br />
+                    <span class='uit-slide-panel__description'>
+                        {{ description }}
+                    </span>
+                </span>
+            </div>
+        </div>
     </div>
 </div>

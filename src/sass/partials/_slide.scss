@@ -16,4 +16,33 @@
     .is-active & {
         opacity: 1;
     }
+
+    .uit-container {
+        height: 100%;
+    }
+}
+
+.uit-slide-panel__content {
+    position: absolute;
+    bottom: 40px;
+    left: 20px;
+    @include banding($c-black);
+    font-family: 'Guardian Egyptian Web';
+    font-size: 22px;
+
+    @include mq(tablet) {
+        font-size: 30px;
+        max-width: 620px;
+    }
+}
+
+.uit-slide-panel__title {
+    color: $c-light-red;
+    font-weight: bold;
+}
+
+.uit-slide-panel__description {
+    color: $c-white;
+    font-weight: 300;
+    font-style: italic;
 }
