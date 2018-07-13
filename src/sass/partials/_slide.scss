@@ -12,6 +12,9 @@
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.6s linear;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 
     .is-active & {
         opacity: 1;
