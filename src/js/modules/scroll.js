@@ -1,4 +1,4 @@
-var scrollTop, windowHeight;
+var scrollTop, windowHeight, scrollThreshold;
 
 module.exports =  {
     init: function() {
@@ -16,10 +16,19 @@ module.exports =  {
             this.setValues();
             this.onScroll();
         }.bind(this));
+
+        $(document).keydown(function(e) {
+            if (e.keyCode == 37) {
+                this.progress('back')
+            } else if (e.keyCode == 39) {
+                this.progress('forward');
+            }
+        }.bind(this));
     },
 
     setValues: function() {
         windowHeight = $(window).height();
+        scrollThreshold = $('.uit-slide-scroll').height() + 1;
     },
 
     onScroll: function() {
@@ -36,5 +45,13 @@ module.exports =  {
         $('.is-active').removeClass('is-active');
         console.log('showing ' + activePanel);
         $('.uit-slide--' + activePanel).addClass('is-active');
+    },
+
+    progress: function(direction) {
+        if (direction === 'back') {
+            $(window).scrollTop(scrollTop - scrollThreshold);
+        } else if (direction === 'forward') {
+            $(window).scrollTop(scrollTop + scrollThreshold);
+        }
     }
 };
