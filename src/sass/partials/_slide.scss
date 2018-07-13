@@ -9,4 +9,11 @@
     left: 0;
     right: 0;
     bottom: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.6s linear;
+
+    .is-active & {
+        opacity: 1;
+    }
 }

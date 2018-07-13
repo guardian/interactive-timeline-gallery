@@ -27,6 +27,8 @@ module.exports =  {
             }
         }.bind(this));
 
-        console.log(activePanel);
+        $('.is-active').removeClass('is-active');
+        console.log('showing ' + activePanel);
+        $('.uit-slide--' + activePanel).addClass('is-active');
     }
 };
