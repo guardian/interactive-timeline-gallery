@@ -44,7 +44,7 @@ function cleanMedia(data) {
                 url = url.replace('images/', '');
                 url = url.split('?')[0];
 
-            data.slides[i].media = url + '/' + crop + '/1000.jpg';
+            data.slides[i].media = url + '/' + crop;
         }
     }
 
