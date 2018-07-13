@@ -1,0 +1,87 @@
+.uit-interface {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.uit-timeline {
+    position: relative;
+    list-style: none;
+    padding: 0;
+    margin: 40px 0 0;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 80px);
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: $c-white;
+    }
+}
+
+.uit-timeline__point {
+    position: relative;
+    width: 12px;
+
+    &.is-passed .uit-timeline__point-bullet:before {
+        opacity: 1;
+    }
+
+    &.is-active {
+        .uit-timeline__point-bullet:before {
+            opacity: 1;
+            background-color: $c-light-red;
+        }
+
+        .uit-timeline__point-date {
+            opacity: 1;
+        }
+    }
+}
+
+.uit-timeline__point-bullet {
+    position: absolute;
+    top: -6px;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    background-color: $c-white;
+    border-radius: 6px;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 8px;
+        height: 8px;
+        border-radius: 4px;
+        background-color: $c-grey;
+        opacity: 0;
+        transition: 0.5s linear opacity;
+    }
+}
+
+.uit-timeline__point-date {
+    position: absolute;
+    text-align: center;
+    left: -999px;
+    right: -999px;
+    font-family: 'Guardian Figures';
+    font-weight: normal;
+    font-size: 32px;
+    color: $c-white;
+    opacity: 0;
+    transition: 0.5s linear opacity;
+
+    @include mq(tablet) {
+        font-size: 120px;
+        line-height: 1.2;
+    }
+}

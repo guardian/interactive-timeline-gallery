@@ -1,0 +1,12 @@
+<div class='uit-interface'>
+    <div class='uit-container'>
+        <ul class='uit-timeline'>
+            {{#each slides}}
+                <li class='uit-timeline__point' data-slide='{{ @key }}'>
+                    <div class='uit-timeline__point-bullet'></div>
+                    <div class='uit-timeline__point-date'>{{ date }}</div>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
