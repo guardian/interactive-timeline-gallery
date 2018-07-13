@@ -4,6 +4,7 @@
     top: 0;
     left: 0;
     right: 0;
+    bottom: 0;
 }
 
 .uit-timeline {
@@ -84,4 +85,47 @@
         font-size: 120px;
         line-height: 1.2;
     }
+}
+
+.uit-arrows {
+    position: absolute;
+    top: calc(50vh - 22px);
+    width: 100%;
+}
+
+.uit-arrow {
+    width: 44px;
+    height: 44px;
+    border-radius: 22px;
+    position: absolute;
+    top: 0;
+    background-color: $c-white;
+    cursor: pointer;
+    transition: background 0.2s linear;
+
+    &:hover {
+        background-color: $c-light-red;
+
+        svg {
+            fill: $c-white;
+        }
+    }
+
+    svg {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        fill: $c-light-red;
+        transition: background 0.2s linear;
+    }
+}
+
+.uit-arrow--back {
+    left: 0;
+}
+
+.uit-arrow--forward {
+    right: 0;
 }

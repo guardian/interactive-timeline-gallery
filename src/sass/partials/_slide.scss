@@ -1,6 +1,10 @@
 .uit-slide-scroll {
     height: 66vh;
     width: 100%;
+
+    .uit-slide:last-of-type & {
+        height: 105vh;
+    }
 }
 
 .uit-slide-panel {

@@ -1,4 +1,4 @@
-var scrollTop, windowHeight, scrollThreshold;
+var scrollTop, windowHeight, scrollThreshold, activePanel = 0;
 
 module.exports =  {
     init: function() {
@@ -17,6 +17,14 @@ module.exports =  {
             this.onScroll();
         }.bind(this));
 
+        $('.uit-arrow--back').click(function() {
+            this.progress('back');
+        }.bind(this));
+
+        $('.uit-arrow--forward').click(function() {
+            this.progress('forward');
+        }.bind(this));
+
         $(document).keydown(function(e) {
             if (e.keyCode == 37) {
                 this.progress('back')
@@ -33,8 +41,6 @@ module.exports =  {
 
     onScroll: function() {
         scrollTop = $(window).scrollTop();
-
-        var activePanel = 0;
 
         $('.uit-slide-scroll').each(function(i, el) {
             if (scrollTop > $(el).offset().top) {
@@ -62,10 +68,14 @@ module.exports =  {
     },
 
     progress: function(direction) {
-        if (direction === 'back') {
-            $(window).scrollTop(scrollTop - scrollThreshold);
-        } else if (direction === 'forward') {
-            $(window).scrollTop(scrollTop + scrollThreshold);
+        if (direction === 'back' && activePanel > 0) {
+            activePanel--;
+        } else if (direction === 'forward' && activePanel < $('.uit-slide').length - 1) {
+            activePanel++;
         }
+
+        console.log($('.uit-slide--' + activePanel).offset().top);
+
+        $(window).scrollTop($('.uit-slide--' + activePanel).offset().top + 1);
     }
 };
