@@ -1,6 +1,7 @@
 <div class='uit'>
-    {{> partials/header }}
-    {{> partials/body }}
+    {{#each slides}}
+        {{> partials/slide }}
+    {{/each}}
 </div>
 
 <script async src='{{ path }}/app.js'></script>

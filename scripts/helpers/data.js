@@ -28,7 +28,7 @@ function fetchData(callback) {
 
 function setSheetNames(data) {
     data = {
-        'events': data[0]
+        'slides': data[0]
     }
 
     return data;
