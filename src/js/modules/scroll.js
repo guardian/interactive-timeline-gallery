@@ -44,6 +44,21 @@ module.exports =  {
 
         $('.is-active').removeClass('is-active');
         $('.uit-slide--' + activePanel).addClass('is-active');
+        this.updateTimeline(activePanel);
+    },
+
+    updateTimeline: function(activePanel) {
+        $('.uit-timeline__point').removeClass('is-active is-passed');
+
+        $('.uit-timeline__point').each(function(i, el) {
+            var currentPanel = $(el).data('slide');
+
+            if (activePanel == currentPanel) {
+                $(el).addClass('is-active');
+            } else if (activePanel > currentPanel) {
+                $(el).addClass('is-passed');
+            }
+        }.bind(this));
     },
 
     progress: function(direction) {
