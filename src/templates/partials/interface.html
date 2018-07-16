@@ -2,7 +2,7 @@
     <div class='uit-container'>
         <ul class='uit-timeline'>
             {{#each slides}}
-                <li class='uit-timeline__point' data-slide='{{ @key }}'>
+                <li class='uit-timeline__point' data-slide='{{ @key }}' style='left: {{ position }}%;'>
                     <a class='uit-timeline__point-bullet' href="#slide-{{ @key }}"></a>
                     <div class='uit-timeline__point-date'>{{ date }}</div>
                 </li>

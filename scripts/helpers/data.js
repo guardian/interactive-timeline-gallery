@@ -45,6 +45,31 @@ function setSheetNames(data) {
     return data;
 }
 
+function slidesToDates(data) {
+    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    for (var i in data.slides) {
+        var dateInParts = data.slides[i].date.split('/');
+        var dateInString = months[parseInt(dateInParts[1]) - 1] + ' ' + dateInParts[0] + ', ' + dateInParts[2];
+
+        data.slides[i].date = new Date(dateInString);
+    }
+
+    return data;
+}
+
+function calculateTimelinePosition(data) {
+    var firstDate = data.slides[0].date;
+    var lastDate = data.slides[data.slides.length - 1].date;
+
+    for (var i in data.slides) {
+        var date = data.slides[i].date;
+
+        data.slides[i].position = (((date - firstDate) / (lastDate - firstDate)) * 100).toFixed(2);
+    }
+
+    return data;
+}
+
 function cleanMedia(data) {
     for (var i in data.slides) {
         var url = data.slides[i].media;
@@ -62,6 +87,7 @@ function cleanMedia(data) {
     return data;
 }
 
+
 module.exports = function getData() {
     var isDone = false;
 
@@ -69,6 +95,8 @@ module.exports = function getData() {
         data = result;
         data = setSheetNames(data);
         data = setFurniture(data);
+        data = slidesToDates(data);
+        data = calculateTimelinePosition(data);
         data = cleanMedia(data);
 
         isDone = true;
