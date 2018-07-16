@@ -101,7 +101,8 @@
     top: 0;
     background-color: $c-white;
     cursor: pointer;
-    transition: background 0.2s linear;
+    opacity: 1;
+    transition: background 0.2s linear, opacity 0.3s linear;
 
     &:hover {
         background-color: $c-light-red;
@@ -109,6 +110,11 @@
         svg {
             fill: $c-white;
         }
+    }
+
+    &.is-disabled {
+        pointer-events: none;
+        opacity: 0;
     }
 
     svg {

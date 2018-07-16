@@ -50,7 +50,8 @@ module.exports =  {
 
         $('.is-active').removeClass('is-active');
         $('.uit-slide--' + activePanel).addClass('is-active');
-        this.updateTimeline(activePanel);
+        this.setButtonStates(activePanel);
+        this.updateTimeline();
     },
 
     updateTimeline: function(activePanel) {
@@ -67,10 +68,20 @@ module.exports =  {
         }.bind(this));
     },
 
+    setButtonStates: function() {
+        $('.uit-arrow').removeClass('is-disabled');
+
+        if (activePanel == 'intro') {
+            $('.uit-arrow--back').addClass('is-disabled');
+        } else if (activePanel == 'end') {
+            $('.uit-arrow--forward').addClass('is-disabled');
+        }
+    },
+
     progress: function(direction) {
-        if (direction === 'back' && activePanel > 0) {
+        if (direction === 'back' && activePanel > -1) {
             activePanel--;
-        } else if (direction === 'forward' && activePanel < $('.uit-slide').length - 1) {
+        } else if (direction === 'forward' && activePanel < $('.uit-slide').length) {
             activePanel++;
         }
 
