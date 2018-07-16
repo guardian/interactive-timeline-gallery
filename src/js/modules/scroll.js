@@ -11,7 +11,7 @@ module.exports =  {
         $(window).scroll(function() {
             this.onScroll();
         }.bind(this));
-    
+
         $(window).resize(function() {
             this.setValues();
             this.onScroll();
@@ -55,6 +55,13 @@ module.exports =  {
     },
 
     updateTimeline: function() {
+
+        if ($('.uit-slide---1').hasClass('is-active')) {
+          $('.uit-timeline').css('display', 'none');
+        } else {
+            $('.uit-timeline').css('display', 'flex');
+        }
+
         $('.uit-timeline__point').removeClass('is-active is-passed');
 
         $('.uit-timeline__point').each(function(i, el) {
