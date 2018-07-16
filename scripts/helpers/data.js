@@ -52,6 +52,8 @@ function slidesToDates(data) {
         var dateInString = months[parseInt(dateInParts[1]) - 1] + ' ' + dateInParts[0] + ', ' + dateInParts[2];
 
         data.slides[i].date = new Date(dateInString);
+        data.slides[i].shortDate = data.slides[i].date.getDate() + ' ' + months[data.slides[i].date.getMonth()].substr(0, 3);
+        data.slides[i].year = dateInParts[2];
     }
 
     return data;

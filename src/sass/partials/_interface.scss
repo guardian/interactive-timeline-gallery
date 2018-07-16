@@ -10,9 +10,15 @@
 .uit-timeline {
     position: relative;
     list-style: none;
+    display: inline-block;
     padding: 0;
-    margin: 40px 0 0;
-    width: calc(100% - 80px);
+    margin: 38px 0 0;
+    width: calc(100% - 100px);
+
+    @include mq(tablet) {
+        margin-top: 60px;
+        width: calc(100% - 110px);
+    }
 
     &:before {
         content: '';
@@ -33,12 +39,17 @@
     }
 
     &.is-active {
-        .uit-timeline__point-bullet:before {
-            opacity: 1;
-            background-color: $c-light-red;
+        .uit-timeline__point-bullet {
+            z-index: 24;
+
+            &:before {
+                opacity: 1;
+                background-color: $c-light-red;
+            }
         }
 
-        .uit-timeline__point-date {
+        .uit-timeline__point-date,
+        .uit-timeline__point-year {
             opacity: 1;
         }
     }
@@ -68,11 +79,12 @@
     }
 }
 
-.uit-timeline__point-date {
+.uit-timeline__point-year {
     position: absolute;
     text-align: center;
     left: -999px;
     right: -999px;
+    top: 24px;
     font-family: 'Guardian Figures';
     font-weight: normal;
     font-size: 32px;
@@ -81,15 +93,34 @@
     transition: 0.5s linear opacity;
 
     @include mq(tablet) {
-        font-size: 120px;
+        font-size: 80px;
         line-height: 1.2;
+        top: auto;
+    }
+
+    @include mq(desktop) {
+        font-size: 120px;
     }
 }
 
-.uit-arrows {
+.uit-timeline__point-date {
     position: absolute;
-    top: calc(50vh - 22px);
-    width: 100%;
+    text-align: center;
+    left: -999px;
+    top: 6px;
+    right: -999px;
+    font-family: 'Guardian Figures';
+    font-weight: normal;
+    font-size: 20px;
+    color: $c-white;
+    opacity: 0;
+    transition: 0.5s linear opacity;
+
+    @include mq(tablet) {
+        font-size: 30px;
+        line-height: 1.1;
+        top: -44px;
+    }
 }
 
 .uit-arrow {
@@ -97,7 +128,7 @@
     height: 44px;
     border-radius: 22px;
     position: absolute;
-    top: 0;
+    top: calc(50vh - 22px);
     background-color: $c-white;
     cursor: pointer;
     opacity: 1;
@@ -128,18 +159,34 @@
 }
 
 .uit-arrow--back {
-    left: 0;
+    left: 10px;
+
+    @include mq(mobileLandscape) {
+        left: 20px;
+    }
 }
 
 .uit-arrow--forward {
-    right: 0;
+    right: 10px;
+
+    @include mq(mobileLandscape) {
+        right: 20px;
+    }
 }
 
 .uit-logo {
     position: absolute;
-    top: -22px;
-    right: 0;
+    top: 16px;
     display: block;
+    right: 10px;
+
+    @include mq(mobileLandscape) {
+        right: 20px;
+    }
+
+    @include mq(tablet) {
+        top: 38px;
+    }
 
     &:hover {
         text-decoration: none;
