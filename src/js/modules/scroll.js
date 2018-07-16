@@ -1,4 +1,6 @@
-var scrollTop, windowHeight, scrollThreshold, activePanel = -1;
+var scrollTop,
+    windowHeight,
+    activePanel = -1;
 
 module.exports =  {
     init: function() {
@@ -36,14 +38,13 @@ module.exports =  {
 
     setValues: function() {
         windowHeight = $(window).height();
-        scrollThreshold = $('.uit-slide-scroll').height() + 1;
     },
 
     onScroll: function() {
         scrollTop = $(window).scrollTop();
 
         $('.uit-slide-scroll').each(function(i, el) {
-            if (scrollTop > $(el).offset().top) {
+            if (scrollTop >= $(el).offset().top - 2) {
                 activePanel = $(el).data('slide');
             }
         }.bind(this));
@@ -85,6 +86,6 @@ module.exports =  {
             activePanel++;
         }
 
-        $(window).scrollTop($('.uit-slide--' + activePanel).offset().top + 1);
+        $(window).scrollTop($('.uit-slide--' + activePanel).offset().top);
     }
 };
