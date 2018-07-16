@@ -50,11 +50,11 @@ module.exports =  {
 
         $('.is-active').removeClass('is-active');
         $('.uit-slide--' + activePanel).addClass('is-active');
-        this.setButtonStates(activePanel);
+        this.setButtonStates();
         this.updateTimeline();
     },
 
-    updateTimeline: function(activePanel) {
+    updateTimeline: function() {
         $('.uit-timeline__point').removeClass('is-active is-passed');
 
         $('.uit-timeline__point').each(function(i, el) {
