@@ -26,9 +26,20 @@ function fetchData(callback) {
     });
 }
 
+function setFurniture(data) {
+    for (var i = 0; i < data.furniture.length; i++) {
+        data[data.furniture[i].option] = data.furniture[i].value
+    }
+
+    delete data.furniture;
+
+    return data;
+}
+
 function setSheetNames(data) {
     data = {
-        'slides': data[0]
+        'slides': data[0],
+        'furniture': data[1]
     }
 
     return data;
@@ -57,6 +68,7 @@ module.exports = function getData() {
     fetchData(function(result) {
         data = result;
         data = setSheetNames(data);
+        data = setFurniture(data);
         data = cleanMedia(data);
 
         isDone = true;
