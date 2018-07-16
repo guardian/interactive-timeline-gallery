@@ -1,4 +1,4 @@
-var scrollTop, windowHeight, scrollThreshold, activePanel = 'intro';
+var scrollTop, windowHeight, scrollThreshold, activePanel = -1;
 
 module.exports =  {
     init: function() {
@@ -71,17 +71,17 @@ module.exports =  {
     setButtonStates: function() {
         $('.uit-arrow').removeClass('is-disabled');
 
-        if (activePanel == 'intro') {
+        if (activePanel == -1) {
             $('.uit-arrow--back').addClass('is-disabled');
-        } else if (activePanel == 'end') {
+        } else if (activePanel == $('.uit-slide').length -2) {
             $('.uit-arrow--forward').addClass('is-disabled');
         }
     },
 
     progress: function(direction) {
-        if (direction === 'back' && activePanel > -1) {
+        if (direction === 'back') {
             activePanel--;
-        } else if (direction === 'forward' && activePanel < $('.uit-slide').length) {
+        } else if (direction === 'forward') {
             activePanel++;
         }
 
