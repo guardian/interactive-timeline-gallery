@@ -17,7 +17,7 @@
 
     @include mq(tablet) {
         margin-top: 60px;
-        width: calc(100% - 90px);
+        width: calc(100% - 110px);
     }
 
     &:before {
@@ -164,10 +164,6 @@
     @include mq(mobileLandscape) {
         left: 20px;
     }
-
-    @include mq(tablet) {
-        left: 0;
-    }
 }
 
 .uit-arrow--forward {
@@ -175,10 +171,6 @@
 
     @include mq(mobileLandscape) {
         right: 20px;
-    }
-
-    @include mq(tablet) {
-        right: 0;
     }
 }
 
@@ -193,7 +185,6 @@
     }
 
     @include mq(tablet) {
-        right: 0;
         top: 38px;
     }
 
