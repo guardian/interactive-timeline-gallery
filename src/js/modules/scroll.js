@@ -1,4 +1,4 @@
-var scrollTop, windowHeight, scrollThreshold, activePanel = 0;
+var scrollTop, windowHeight, scrollThreshold, activePanel = 'intro';
 
 module.exports =  {
     init: function() {
@@ -73,8 +73,6 @@ module.exports =  {
         } else if (direction === 'forward' && activePanel < $('.uit-slide').length - 1) {
             activePanel++;
         }
-
-        console.log($('.uit-slide--' + activePanel).offset().top);
 
         $(window).scrollTop($('.uit-slide--' + activePanel).offset().top + 1);
     }

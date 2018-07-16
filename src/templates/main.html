@@ -1,9 +1,13 @@
 <div class='uit'>
     {{> partials/interface }}
 
+    {{> partials/intro }}
+
     {{#each slides}}
         {{> partials/slide }}
     {{/each}}
+
+    {{> partials/end }}
 </div>
 
 <script async src='{{ path }}/app.js'></script>
