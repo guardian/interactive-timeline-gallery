@@ -98,7 +98,6 @@ module.exports = function getData() {
         data = slidesToDates(data);
         data = calculateTimelinePosition(data);
         data = cleanMedia(data);
-
         isDone = true;
     });
 
