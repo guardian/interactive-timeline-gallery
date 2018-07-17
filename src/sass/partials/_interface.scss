@@ -57,16 +57,13 @@
 
     &:hover {
       .uit-timeline__point-bullet {
-          z-index: 24;
+            z-index: 24;
 
-          &:before {
-              opacity: 1;
-              background-color: $c-light-red;
-          }
-      }
-      .uit-timeline__point-year {
-          opacity: 1;
-      }
+            &:before {
+                opacity: 1;
+                background-color: $c-light-red;
+            }
+        }
     }
 }
 
