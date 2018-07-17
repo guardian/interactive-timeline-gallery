@@ -14,20 +14,27 @@
 
 .uit-slide-panel__content {
     &.uit-slide-end__content {
-      top: calc(50vh - 22px);
-      left: calc(30vh - 22px);
-      max-width: 700px;
+      top: calc(30vh - 22px);
+      left: calc(20vh - 22px);
+
+      @include mq(tablet) {
+          max-width: 700px;
+          top: calc(40vh - 22px);
+          left: calc(45vh - 22px);
+      }
+
     }
 }
 
 .uit-slide-end__title {
   background-color: #121212;
   box-shadow: none;
+  margin-bottom: 40px;
 }
 
 .uit-slide-panel__title {
     &.uit-slide-end__title {
-      font-size: 54px;
+      font-size: 34px;
       line-height: 1;
     }
 }

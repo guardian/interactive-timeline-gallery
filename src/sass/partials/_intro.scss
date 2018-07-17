@@ -55,8 +55,13 @@
 
 .uit-slide-panel__title {
     &.uit-slide-intro__title {
-      font-size: 64px;
+
+      font-size: 42px;
       line-height: 1;
+
+      @include mq(leftCol) {
+        font-size: 64px;
+      }
     }
 }
 

@@ -14,6 +14,7 @@
     padding: 0;
     margin: 38px 0 0;
     width: calc(100% - 100px);
+    background-color: #000;
 
     @include mq(tablet) {
         margin-top: 60px;
@@ -53,6 +54,20 @@
             opacity: 1;
         }
     }
+
+    &:hover {
+      .uit-timeline__point-bullet {
+          z-index: 24;
+
+          &:before {
+              opacity: 1;
+              background-color: $c-light-red;
+          }
+      }
+      .uit-timeline__point-year {
+          opacity: 1;
+      }
+    }
 }
 
 .uit-timeline__point-bullet {
@@ -90,16 +105,16 @@
     font-size: 32px;
     color: $c-white;
     opacity: 0;
-    transition: 0.5s linear opacity;
+    transition: 0.3s linear opacity;
 
     @include mq(tablet) {
-        font-size: 80px;
+        font-size: 64px;
         line-height: 1.2;
         top: auto;
     }
 
     @include mq(desktop) {
-        font-size: 120px;
+        font-size: 84px;
     }
 }
 
@@ -124,8 +139,8 @@
 }
 
 .uit-arrow {
-    width: 54px;
-    height: 54px;
+    width: 44px;
+    height: 44px;
     border-radius: 32px;
     position: absolute;
     top: calc(50vh - 22px);
@@ -133,6 +148,11 @@
     cursor: pointer;
     opacity: 1;
     transition: background 0.2s linear, opacity 0.3s linear;
+
+    @include mq(tablet) {
+      width: 54px;
+      height: 54px;
+    }
 
     &:hover {
         background-color: $c-light-red;
