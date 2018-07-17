@@ -1,6 +1,16 @@
 <div class='uit-slide uit-slide--{{ @key }}' id='slide-{{ @key }}'>
     <div class='uit-slide-scroll' data-slide='{{ @key }}'></div>
     <div class='uit-slide-panel'>
+
+      {{#if video}}
+      <div class="video_card_container">
+              <video id="bgvid" playsinline autoplay muted loop>
+                <source src="../../assets/{{ video }}.mp4" type="video/mp4">
+              </video>
+      </div>
+      {{/if}}
+
+
         <style>
             .uit-slide--{{ @key }} .uit-slide-panel {
                 background-image: url({{ media }}/1000.jpg);
