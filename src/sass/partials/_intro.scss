@@ -14,12 +14,12 @@
 
 .uit-slide-panel__content {
     &.uit-slide-intro__content {
-      bottom: 0vh;
-      left: 0;
-      max-width: 100%;
-      background: rgba(0, 0, 0, .8);
-      padding-bottom: 5vh;
-      padding-top: 3vh;
+        bottom: 0vh;
+        left: 0;
+        max-width: 100%;
+        background: rgba(0, 0, 0, .8);
+        padding-bottom: 5vh;
+        padding-top: 3vh;
     }
 }
 
@@ -55,7 +55,6 @@
 
 .uit-slide-panel__title {
     &.uit-slide-intro__title {
-
         font-size: 42px;
         line-height: 1;
 
