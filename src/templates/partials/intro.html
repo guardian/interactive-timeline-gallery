@@ -1,4 +1,4 @@
-<div class='uit-slide uit-slide---1'>
+<div class='uit-slide uit-slide---1 is-active'>
     <div class='uit-slide-scroll' data-slide='-1'></div>
     <div class='uit-slide-panel'>
         <div class="video_card_container">
@@ -7,17 +7,21 @@
             </video>
         </div>
 
-        <div class='uit-slide-panel__content uit-slide-intro__content'>
-            <div class='uit-slide-panel__content-container'>
-                <span class='uit-slide-panel__content__inner uit-slide-intro__inner'>
-                    <span class='uit-slide-panel__title uit-slide-intro__title'>
-                        {{ headline }}
-                    </span>
-                    <br />
-                    <span class='uit-slide-panel__description uit-slide-intro__description'>
-                        {{ standfirst }}
-                    </span>
-                </span>
+        <div class='uit-container'>
+            <div class='uit-intro__content'>
+                <h3 class='uit-intro__tag'>
+                    <span class='uit-intro__tag__inner'>Timeline in pictures</span>
+                </h3>
+
+                <h1 class='uit-intro__headline' itemprop='headline'>
+                    <span class='uit-intro__headline__inner'>{{ headline }}</span>
+                </h1>
+
+                <h2 class='uit-intro__standfirst' itemprop='standfirst'>
+                    <span class='uit-intro__standfirst__inner'>{{ standfirst }}</span>
+                </h2>
+
+                {{> partials/share }}
             </div>
         </div>
     </div>

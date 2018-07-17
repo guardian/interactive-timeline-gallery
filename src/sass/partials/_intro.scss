@@ -12,61 +12,64 @@
     }
 }
 
-.uit-slide-panel__content {
-    &.uit-slide-intro__content {
-        bottom: 0vh;
-        left: 0;
-        max-width: 100%;
-        background: rgba(0, 0, 0, .8);
-        padding-bottom: 5vh;
-        padding-top: 3vh;
-    }
-}
-
-.uit-slide-panel__content-container {
-    box-shadow: none;
-    position: relative;
-
-    @include mq(leftCol) {
-        margin-left: 140px;
-    }
-
-    @include mq(wide) {
-        margin-left: 220px;
-    }
-
-    &:before {
-        @include mq(leftCol) {
-            content: '';
-            position: absolute;
-            top: 1vh;
-            bottom: 0;
-            left: -10px;
-            width: 1px;
-            background-color: $c-light-grey;
-        }
-  }
-}
-
-.uit-slide-intro__inner {
-  background: none;
-  box-shadow: none;
-}
-
-.uit-slide-panel__title {
-    &.uit-slide-intro__title {
-        font-size: 42px;
-        line-height: 1;
-
-        @include mq(leftCol) {
-            font-size: 64px;
-        }
-    }
-}
-
 #bgvid {
     min-height: 250px;
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.uit-intro__content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 30;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 620px;
+}
+
+.uit-intro__tag {
+    @include banding($c-light-red);
+    margin: 0;
+    color: $c-white;
+    font-family: 'Guardian Egyptian Web';
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: -3px;
+
+    @include mq(tablet) {
+        font-size: 26px;
+    }
+}
+
+.uit-intro__headline {
+    @include banding($c-black);
+    margin: 0;
+    font-size: 32px;
+    font-family: 'Guardian Egyptian Web';
+    font-weight: 700;
+    color: $c-light-red;
+
+    @include mq(tablet) {
+        font-size: 76px;
+    }
+}
+
+.uit-intro__standfirst {
+    @include banding($c-black);
+    margin-top: 6px;
+    font-family: 'Guardian Egyptian Web';
+    font-weight: 400;
+    font-style: italic;
+    color: $c-white;
+    font-size: 22px;
+    line-height: 1.34;
+    margin-bottom: 12px;
+
+    @include mq(tablet) {
+        font-size: 26px;
+    }
 }
