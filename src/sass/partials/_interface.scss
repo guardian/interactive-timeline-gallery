@@ -224,6 +224,7 @@
     height: 44px;
     width: 44px;
     border-radius: 22px;
+    pointer-events: auto;
     transition: background 0.2s linear;
 
     svg {

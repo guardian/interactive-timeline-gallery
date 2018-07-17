@@ -57,11 +57,13 @@ module.exports =  {
 
     updateTimeline: function() {
 
+/*
         if ($('.uit-slide---1').hasClass('is-active')) {
           $('.uit-timeline__controls').css('display', 'none');
         } else {
             $('.uit-timeline__controls').css('display', 'flex');
         }
+*/
 
         $('.uit-timeline__point').removeClass('is-active is-passed');
 
