@@ -32,10 +32,16 @@
 .uit-slide-panel__content {
     position: absolute;
     bottom: 40px;
-    left: 20px;
+    left: 10px;
+    right: 10px;
     @include banding($c-black);
     font-family: 'Guardian Egyptian Web';
     font-size: 22px;
+
+    @include mq(mobileLandscape) {
+        left: 20px;
+        right: 20px;
+    }
 
     @include mq(tablet) {
         font-size: 30px;
