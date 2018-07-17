@@ -36,7 +36,7 @@
     right: 10px;
     @include banding($c-black);
     font-family: 'Guardian Egyptian Web';
-    font-size: 22px;
+    font-size: 20px;
 
     @include mq(mobileLandscape) {
         left: 20px;
@@ -44,7 +44,7 @@
     }
 
     @include mq(tablet) {
-        font-size: 30px;
+        font-size: 28px;
         max-width: 620px;
     }
 }
