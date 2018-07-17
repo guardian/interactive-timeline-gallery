@@ -91,18 +91,26 @@
     }
 }
 
-.uit-timeline__point-year {
+.uit-timeline__point-year,
+.uit-timeline__point-date {
     position: absolute;
-    text-align: center;
-    left: -999px;
-    right: -999px;
-    top: 24px;
+    left: 0;
     font-family: 'Guardian Figures';
     font-weight: normal;
-    font-size: 32px;
     color: $c-white;
     opacity: 0;
     transition: 0.3s linear opacity;
+
+    .uit-timeline__point--late & {
+        text-align: right;
+        left: auto;
+        right: 0;
+    }
+}
+
+.uit-timeline__point-year {
+    top: 24px;
+    font-size: 32px;
 
     @include mq(tablet) {
         font-size: 64px;
@@ -116,17 +124,9 @@
 }
 
 .uit-timeline__point-date {
-    position: absolute;
-    text-align: center;
-    left: -999px;
     top: 6px;
-    right: -999px;
-    font-family: 'Guardian Figures';
-    font-weight: normal;
+    min-width: 140px;
     font-size: 20px;
-    color: $c-white;
-    opacity: 0;
-    transition: 0.5s linear opacity;
 
     @include mq(tablet) {
         font-size: 30px;

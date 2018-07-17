@@ -67,6 +67,7 @@ function calculateTimelinePosition(data) {
         var date = data.slides[i].date;
 
         data.slides[i].position = (((date - firstDate) / (lastDate - firstDate)) * 100).toFixed(2);
+        data.slides[i].isLate = 75 > data.slides[i].position ? false : true;
     }
 
     return data;
