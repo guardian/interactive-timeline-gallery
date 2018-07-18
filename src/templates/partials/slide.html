@@ -14,11 +14,13 @@
                 background-image: url({{ media }}/1000.jpg);
             }
 
-            @media screen and (min-width: 960px) {
-                .uit-slide--{{ @key }} .uit-slide-panel {
-                    background-image: url({{ media }}/2000.jpg);
+            {{#if isOver2000}}
+                @media screen and (min-width: 960px) {
+                    .uit-slide--{{ @key }} .uit-slide-panel {
+                        background-image: url({{ media }}/2000.jpg);
+                    }
                 }
-            }
+            {{/if}}
         </style>
     {{/if}}
 

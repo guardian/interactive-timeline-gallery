@@ -92,6 +92,7 @@ function cleanMedia(data) {
         if (url) {
             if (url.includes('gutools.co.uk')) {
                 data.slides[i].media = convertToGridUrl(url);
+                data.slides[i].isOver2000 = checkCropSize(data.slides[i].media);
             } else if (url.includes('.mp4')) {
                 data.slides[i].isVideo = true;
             }
@@ -111,6 +112,16 @@ function convertToGridUrl(url) {
         url = url.split('?')[0];
 
     return url + '/' + crop;
+}
+
+function checkCropSize(url) {
+    var url = url.split('/');
+        url = url[url.length - 1];
+        url = url.split('_');
+
+    var width = parseInt(url[2]);
+
+    return width > 2000;
 }
 
 module.exports = function getData() {
