@@ -2,15 +2,13 @@
     <div class='uit-slide-scroll' data-slide='{{ @key }}'></div>
     <div class='uit-slide-panel'>
 
-      {{#if video}}
-      <div class="video_card_container">
-              <video id="bgvid" playsinline autoplay muted loop>
-                <source src="../../assets/{{ video }}.mp4" type="video/mp4">
-              </video>
-      </div>
-      {{/if}}
-
-
+    {{#if isVideo}}
+        <div class='uit-slide__video'>
+            <video class='uit-slide__video-player' playsinline autoplay muted loop>
+                <source src="{{ path }}/assets/{{ media }}.mp4" type="video/mp4">
+            </video>
+        </div>
+    {{else}}
         <style>
             .uit-slide--{{ @key }} .uit-slide-panel {
                 background-image: url({{ media }}/1000.jpg);
@@ -22,6 +20,8 @@
                 }
             }
         </style>
+    {{/if}}
+
         <div class='uit-container'>
             <div class='uit-slide-panel__content'>
                 <span class='uit-slide-panel__content__inner'>
