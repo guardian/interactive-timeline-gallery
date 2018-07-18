@@ -54,6 +54,7 @@ module.exports =  {
         this.setButtonStates();
         this.updateTimeline();
         this.playVideo();
+        this.loadImages();
     },
 
     playVideo: function() {
@@ -73,6 +74,15 @@ module.exports =  {
                 $(this).get(0).currentTime = 0
             }.bind(this), 500);
         })
+    },
+
+    loadImages: function() {
+        this.loadImage(activePanel);
+        this.loadImage(activePanel + 1);
+    },
+
+    loadImage: function(panel) {
+        $('.uit-slide--' + panel + ' futureStyle').replaceWith('<style>' + $('.uit-slide--' + panel + ' futureStyle').html() + '</style>');
     },
 
     updateTimeline: function() {
