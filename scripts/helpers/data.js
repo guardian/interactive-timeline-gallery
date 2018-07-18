@@ -76,7 +76,7 @@ function calculateTimelinePosition(data) {
 function cleanMedia(data) {
     for (var i in data.slides) {
         var url = data.slides[i].media;
-        if (url) {
+        if (url && url.includes('gutools.co.uk')) {
             var crop = url.split('?crop=')[1];
                 url = url.replace('gutools.co.uk', 'guim.co.uk');
                 url = url.replace('http://', 'https://');
@@ -84,29 +84,13 @@ function cleanMedia(data) {
                 url = url.split('?')[0];
 
             data.slides[i].media = url + '/' + crop;
+        } else if (url && url.includes('.mp4')) {
+            data.slides[i].isVideo = true;
         }
     }
 
     return data;
 }
-
-function showVideo(data) {
-    for (var i in data.slides) {
-        var url = data.slides[i].media;
-        if (url) {
-            var crop = url.split('?crop=')[1];
-                url = url.replace('gutools.co.uk', 'guim.co.uk');
-                url = url.replace('http://', 'https://');
-                url = url.replace('images/', '');
-                url = url.split('?')[0];
-
-            data.slides[i].media = url + '/' + crop;
-        }
-    }
-
-    return data;
-}
-
 
 module.exports = function getData() {
     var isDone = false;
