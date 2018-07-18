@@ -72,6 +72,14 @@
     position: relative;
     width: 12px;
     pointer-events: auto;
+    transition: width .4s;
+    transition: height .4s;
+
+    @include mq(tablet) {
+        transition: width 0s;
+        transition: height 0s;
+    }
+
 
     &.is-passed .uit-timeline__point-bullet:before {
         opacity: 1;
@@ -90,6 +98,13 @@
             width: 13px;
             height: 13px;
             top: -5px;
+            transform: scale(1.2);
+            transition: transform 0.5s;
+
+            @include mq(tablet) {
+              transform: scale(1.2);
+              transition: transform 0.5s;
+            }
 
             &:before {
                 opacity: 1;
@@ -98,6 +113,13 @@
                 height: 9px;
                 top: 2px;
                 left: 2px;
+                transform: scale(1.2);
+                transition: transform 0.5s;
+
+                @include mq(tablet) {
+                    transition: width 0s;
+                    transition: height 0s;
+                }
             }
         }
 
@@ -110,10 +132,17 @@
     &:hover {
       .uit-timeline__point-bullet {
             z-index: 24;
+            width: 13px;
+            height: 13px;
+            top: -4px;
 
             &:before {
                 opacity: 1;
                 background-color: $c-light-red;
+                width: 9px;
+                height: 9px;
+                top: 2px;
+                left: 2px;
             }
         }
     }
