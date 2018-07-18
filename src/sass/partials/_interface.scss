@@ -175,11 +175,6 @@
     transition: background 0.2s linear, opacity 0.3s linear;
     pointer-events: auto;
 
-    @include mq(tablet) {
-      width: 54px;
-      height: 54px;
-    }
-
     &:hover {
         background-color: $c-light-red;
 

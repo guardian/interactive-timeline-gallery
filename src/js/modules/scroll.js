@@ -53,18 +53,29 @@ module.exports =  {
         $('.uit-slide--' + activePanel).addClass('is-active');
         this.setButtonStates();
         this.updateTimeline();
+        this.playVideo();
+    },
+
+    playVideo: function() {
+        var $video = $('.is-active').find('.uit-slide__video-player');
+
+        if ($video.length > 0) {
+            $video.get(0).play();
+            $video.addClass('is-playing');
+        }
+
+        // pause videos in unactive slides
+        $('.uit-slide:not(.is-active').find('.is-playing').each(function() {
+            $(this).removeClass('is-playing');
+            $(this).get(0).pause();
+
+            setTimeout(function() {
+                $(this).get(0).currentTime = 0
+            }.bind(this), 500);
+        })
     },
 
     updateTimeline: function() {
-
-/*
-        if ($('.uit-slide---1').hasClass('is-active')) {
-          $('.uit-timeline__controls').css('display', 'none');
-        } else {
-            $('.uit-timeline__controls').css('display', 'flex');
-        }
-*/
-
         $('.uit-timeline__point').removeClass('is-active is-passed');
 
         $('.uit-timeline__point').each(function(i, el) {
