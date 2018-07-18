@@ -73,23 +73,44 @@ function calculateTimelinePosition(data) {
     return data;
 }
 
-function cleanMedia(data) {
-    for (var i in data.slides) {
-        var url = data.slides[i].media;
-        if (url && url.includes('gutools.co.uk')) {
-            var crop = url.split('?crop=')[1];
-                url = url.replace('gutools.co.uk', 'guim.co.uk');
-                url = url.replace('http://', 'https://');
-                url = url.replace('images/', '');
-                url = url.split('?')[0];
-
-            data.slides[i].media = url + '/' + crop;
-        } else if (url && url.includes('.mp4')) {
-            data.slides[i].isVideo = true;
+function cleanIntroMedia() {
+    if (data.cover) {
+        if (data.cover.includes('gutools.co.uk')) {
+            data.cover = convertToGridUrl(data.cover)
+        } else if (data.cover.includes('.mp4')) {
+            data.coverIsVideo = true;
         }
     }
 
     return data;
+}
+
+function cleanMedia(data) {
+    for (var i in data.slides) {
+        var url = data.slides[i].media;
+
+        if (url) {
+            if (url.includes('gutools.co.uk')) {
+                data.slides[i].media = convertToGridUrl(url);
+            } else if (url.includes('.mp4')) {
+                data.slides[i].isVideo = true;
+            }
+        } else {
+            data.slides[i].media = '';
+        }
+    }
+
+    return data;
+}
+
+function convertToGridUrl(url) {
+    var crop = url.split('?crop=')[1];
+        url = url.replace('gutools.co.uk', 'guim.co.uk');
+        url = url.replace('http://', 'https://');
+        url = url.replace('images/', '');
+        url = url.split('?')[0];
+
+    return url + '/' + crop;
 }
 
 module.exports = function getData() {
@@ -102,6 +123,7 @@ module.exports = function getData() {
         data = slidesToDates(data);
         data = calculateTimelinePosition(data);
         data = cleanMedia(data);
+        data = cleanIntroMedia(data);
         isDone = true;
     });
 

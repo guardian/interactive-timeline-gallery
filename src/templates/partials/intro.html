@@ -1,11 +1,25 @@
 <div class='uit-slide uit-slide---1 is-active'>
     <div class='uit-slide-scroll' data-slide='-1'></div>
     <div class='uit-slide-panel'>
-        <div class='uit-slide__video'>
-            <video class='uit-slide__video-player' playsinline autoplay muted loop>
-                <source src="{{ path }}/assets/civil_rights.mp4" type="video/mp4">
-            </video>
-        </div>
+        {{#if coverIsVideo}}
+            <div class='uit-slide__video'>
+                <video class='uit-slide__video-player' playsinline autoplay muted loop>
+                    <source src="{{ cover }}" type="video/mp4">
+                </video>
+            </div>
+        {{else}}
+            <style>
+                .uit-slide---1 .uit-slide-panel {
+                    background-image: url({{ cover }}/1000.jpg);
+                }
+
+                @media screen and (min-width: 960px) {
+                    .uit-slide---1 .uit-slide-panel {
+                        background-image: url({{ cover }}/2000.jpg);
+                    }
+                }
+            </style>
+        {{/if}}
 
         <div class='uit-container'>
             <div class='uit-intro__content'>
