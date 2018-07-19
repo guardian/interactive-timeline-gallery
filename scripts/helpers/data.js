@@ -32,14 +32,14 @@ function setFurniture(data) {
     }
 
     delete data.furniture;
-
     return data;
 }
 
 function setSheetNames(data) {
     data = {
         'slides': data[0],
-        'furniture': data[1]
+        'furniture': data[1],
+        'related': data[2]
     }
 
     return data;
@@ -100,7 +100,20 @@ function cleanMedia(data) {
             data.slides[i].media = '';
         }
     }
+    return data;
+}
 
+function cleanRelatedMedia(data) {
+    for (var i in data.related) {
+        var url = data.related[i].image;
+        if (url) {
+            if (url.includes('gutools.co.uk')) {
+                data.related[i].image = convertToGridUrl(url);
+            }
+        } else {
+            data.related[i].image = '';
+        }
+    }
     return data;
 }
 
@@ -134,6 +147,7 @@ module.exports = function getData() {
         data = slidesToDates(data);
         data = calculateTimelinePosition(data);
         data = cleanMedia(data);
+        data = cleanRelatedMedia(data);
         data = cleanIntroMedia(data);
         isDone = true;
     });

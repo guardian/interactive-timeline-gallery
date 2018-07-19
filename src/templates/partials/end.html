@@ -1,37 +1,56 @@
 <div class='uit-slide uit-slide--{{ slides.length }}'>
-    <div class='uit-slide-scroll' data-slide='{{ slides.length }}'></div>
-    <div class='uit-slide-panel'>
-        <div class='uit-container'>
-            <h2>End</h2>
+  <div class='uit-slide-scroll' data-slide='{{ slides.length }}'></div>
+  <div class='uit-slide-panel'>
+    <div class='uit-container'>
+      <h2></h2>
 
-            <div class='uit-slide-panel__content uit-slide-end__content'>
-                <span class='uit-slide-panel__content__inner'>
-                  <span class='uit-slide-panel__title uit-slide-end__title'>
-                      Editing
-                  </span>
-                  <br />
-                  <span class='uit-slide-panel__description uit-slide-end__description'>
-                      {{ editing }}
-                  </span>
-                    <br />
-                    <span class='uit-slide-panel__title uit-slide-end__title'>
-                        Copy
-                    </span>
-                    <br />
-                    <span class='uit-slide-panel__description uit-slide-end__description'>
-                        {{ copy }}
-                    </span>
-                    <br />
-                      <span class='uit-slide-panel__title uit-slide-end__title'>
-                          Design
-                      </span>
-                      <br />
-                      <span class='uit-slide-panel__description uit-slide-end__description'>
-                          {{ design }}
-                      </span>
-                </span>
+      <div class='uit-slide-panel__content uit-slide-end__content'>
+        <span class='uit-slide-panel__content__inner'>
+          <span class='uit-slide-panel__title uit-slide-end__title'>
+            Editing
+          </span>
+          <span class='uit-slide-panel__description uit-slide-end__description'>
+            {{ editing }}
+          </span>
+          <br />
+          <span class='uit-slide-panel__title uit-slide-end__title'>
+            Copy
+          </span>
+          <span class='uit-slide-panel__description uit-slide-end__description'>
+            {{ copy }}
+          </span>
+          <br />
+          <span class='uit-slide-panel__title uit-slide-end__title'>
+            Design
+          </span>
+          <span class='uit-slide-panel__description uit-slide-end__description'>
+            {{ design }}
+          </span>
+          <br />
+          <span class='uit-slide-panel__title uit-slide-end__title'>
+            Related content
+          </span>
+        </span>
+
+      <div class='uit-related-content_container'>
+          {{#each related}}
+          <div class='uit-related-content'>
+            <a class='uit-related-content_link' href='{{ link }}'>
+            <div class='uit-related-image uit-related-image--{{ @key }}'>
+            </div>
+          <div>
+                  <div>{{ headline }}</div>
+            </div>
+            </a>
             </div>
 
+            <style>
+            .uit-related-image--{{ @key }} {
+                background-image: url({{ image }}/1000.jpg);
+            }
+            </style>
+          {{/each}}
+              </div>
         </div>
-    </div>
-</div>
+        </div>
+      </div>
