@@ -14,8 +14,8 @@
 
 .uit-slide-panel__content {
     &.uit-slide-end__content {
-      top: calc(30vh - 22px);
-      left: calc(20vh - 22px);
+      top: calc(13vh - 22px);
+      left: calc(5vh - 22px);
 
       @include mq(tablet) {
           max-width: 700px;
@@ -34,8 +34,12 @@
 
 .uit-slide-panel__title {
     &.uit-slide-end__title {
-      font-size: 22px;
+      font-size: 18px;
       line-height: 1;
+
+      @include mq(tablet) {
+        font-size: 22px;
+      }
     }
 }
 
@@ -47,12 +51,21 @@
 }
 
 .uit-related-image {
-  width: 200px;
-  height: 200px;
-  max-height: 200px;
-  max-width: 200px;
+  width: 100px;
+  height: 100px;
+  max-height: 100px;
+  max-width: 100px;
   margin-right: 10px;
-  margin-bottom: 10px;
+  margin-top: 10px;
+
+  @include mq(tablet) {
+    width: 200px;
+    height: 200px;
+    max-height: 200px;
+    max-width: 200px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+  }
 }
 
 .uit-slide-end__description {
@@ -62,10 +75,17 @@
 
 .uit-related-content_container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   max-width: 640px;
   font-size: 18px;
-  padding-top: 40px;
+  padding-top: 5px;
+
+
+  @include mq(tablet) {
+    flex-direction: row;
+    font-size: 20px;
+    padding-top: 20px;
+  }
 }
 
 .uit-slide-panel__content__inner {

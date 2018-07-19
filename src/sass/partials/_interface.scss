@@ -35,10 +35,10 @@
 .uit-timeline__point-bullet {
     position: absolute;
     z-index: 20;
-    top: -1px;
+    top: -2px;
     left: 0;
-    width: 4px;
-    height: 4px;
+    width: 6px;
+    height: 6px;
     background-color: $c-white;
     border-radius: 6px;
 
@@ -53,12 +53,12 @@
         position: absolute;
         top: 0px;
         left: 0px;
-        width: 4px;
-        height: 4px;
+        width: 6px;
+        height: 6px;
         border-radius: 4px;
         background-color: $c-grey;
         opacity: 0;
-        transition: 0.5s linear opacity;
+        transition: 1s linear opacity;
 
           @include mq(tablet) {
             transition: 0s linear opacity;
@@ -99,11 +99,11 @@
             height: 13px;
             top: -5px;
             transform: scale(1.2);
-            transition: transform 0.5s;
+            transition: transform .7s;
 
             @include mq(tablet) {
               transform: scale(1.2);
-              transition: transform 0.5s;
+              transition: transform .5s;
             }
 
             &:before {
@@ -114,7 +114,7 @@
                 top: 2px;
                 left: 2px;
                 transform: scale(1.2);
-                transition: transform 0.5s;
+                transition: transform .7s;
 
                 @include mq(tablet) {
                     transition: width 0s;
