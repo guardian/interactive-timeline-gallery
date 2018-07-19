@@ -1,3 +1,5 @@
+var touchswipe = require('../vendor/touchswipe');
+
 var scrollTop,
     windowHeight,
     activePanel = -1;
@@ -18,6 +20,11 @@ module.exports =  {
             this.setValues();
             this.onScroll();
         }.bind(this));
+
+        $('.uit').touchwipe({
+            wipeLeft: function() { this.progress('forward') }.bind(this),
+            wipeRight: function() { this.progress('back') }.bind(this)
+        });
 
         $('.uit-arrow--back').click(function() {
             this.progress('back');
