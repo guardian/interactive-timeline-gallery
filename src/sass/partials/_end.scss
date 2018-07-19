@@ -26,13 +26,15 @@
 }
 
 .uit-related-content_container {
-  max-width: 82%;
+  max-width: 100%;
   font-size: 18px;
+  display: flex;
+  flex-wrap: wrap;
 
   @include mq(tablet) {
     font-size: 20px;
     padding-top: 20px;
-    display: flex;
+    flex-wrap: wrap;
   }
 }
 
@@ -54,6 +56,18 @@
     }
   }
 
+}
+
+.uit-related-content__children {
+    flex: 1 1 45%;
+    margin-right: 10px;
+
+    @include mq(tablet) {
+      flex: 1 1 25%;
+    }
+}
+
+.uit-slide-end__content {
   .uit-slide-panel__description {
     font-size: 20px;
     line-height: 1;
@@ -68,18 +82,13 @@
 }
 
 .uit-related-image {
-  width: 100px;
-  height: 100px;
-  max-height: 100px;
-  max-width: 100px;
-  margin-right: 10px;
+  width: 150px;
+  height: 150px;
   margin-top: 10px;
 
   @include mq(tablet) {
-    width: 200px;
-    height: 200px;
-    max-height: 200px;
-    max-width: 200px;
+    width: 180px;
+    height: 180px;
     margin-bottom: 10px;
     margin-top: 0px;
   }
