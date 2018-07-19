@@ -2,55 +2,51 @@
   <div class='uit-slide-scroll' data-slide='{{ slides.length }}'></div>
   <div class='uit-slide-panel'>
     <div class='uit-container'>
-      <h2></h2>
-
       <div class='uit-slide-panel__content uit-slide-end__content'>
         <span class='uit-slide-panel__content__inner'>
-          <span class='uit-slide-panel__title uit-slide-end__title'>
-            Editing
-          </span>
-          <span class='uit-slide-panel__description uit-slide-end__description'>
-            {{ editing }}
-          </span>
-          <br />
-          <span class='uit-slide-panel__title uit-slide-end__title'>
-            Copy
-          </span>
-          <span class='uit-slide-panel__description uit-slide-end__description'>
-            {{ copy }}
+          <span class='uit-slide-panel__title'>
+            Editing <span class='uit-slide-panel__description'>
+              {{ editing }}
+            </span>
           </span>
           <br />
-          <span class='uit-slide-panel__title uit-slide-end__title'>
-            Design
-          </span>
-          <span class='uit-slide-panel__description uit-slide-end__description uit-slide-end__related'>
-            {{ design }}
+          <span class='uit-slide-panel__title'>
+            Copy <span class='uit-slide-panel__description'>
+              {{ copy }}
+            </span>
           </span>
           <br />
-          <span class='uit-slide-panel__title uit-slide-end__title'>
-            Related content
+          <span class='uit-slide-panel__title'>
+            Design <span class='uit-slide-panel__description'>
+              {{ design }}
+            </span>
+          </span>
+          <br />
+          <span class='uit-slide-panel__title'>
+            <div class='uit-related-content'>
+              Related content
+            </div>
           </span>
         </span>
 
-      <div class='uit-related-content_container'>
+        <div class='uit-related-content_container'>
           {{#each related}}
-          <div class='uit-related-content'>
+          <div class='uit-related-content__children'>
             <a class='uit-related-content_link' href='{{ link }}'>
-            <div class='uit-related-image uit-related-image--{{ @key }}'>
-            </div>
-          <div>
-                  <div>{{ headline }}</div>
-            </div>
-            </a>
-            </div>
-
-            <style>
-            .uit-related-image--{{ @key }} {
-                background-image: url({{ image }}/1000.jpg);
-            }
-            </style>
-          {{/each}}
+              <div class='uit-related-image uit-related-image--{{ @key }}'>
               </div>
-        </div>
+              <div>
+                <div>{{ headline }}</div>
+              </div>
+            </a>
+          </div>
+          <style>
+          .uit-related-image--{{ @key }} {
+            background-image: url({{ image }}/1000.jpg);
+          }
+          </style>
+          {{/each}}
         </div>
       </div>
+    </div>
+  </div>
