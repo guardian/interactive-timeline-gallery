@@ -42,7 +42,7 @@
 
   .uit-slide-panel__title {
     font-size: 18px;
-    margin-bottom: 40px;
+    margin-bottom: 0;
 
     @include mq(desktop) {
       font-size: 22px;
@@ -50,9 +50,14 @@
 
     .uit-related-content {
       color: $c-white;
-      margin-top: 30px;
-      padding-top: 20px;
+      margin-top: 10px;
+      padding-top: 10px;
       border-top: 1px solid $c-white;
+
+      @include mq(desktop) {
+          margin-top: 30px;
+          padding-top: 20px;
+      }
     }
   }
 }
