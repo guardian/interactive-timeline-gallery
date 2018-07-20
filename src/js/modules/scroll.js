@@ -89,7 +89,7 @@ module.exports =  {
     },
 
     loadImage: function(panel) {
-        $('.uit-slide--' + panel + ' futureStyle').replaceWith('<style>' + $('.uit-slide--' + panel + ' futureStyle').html() + '</style>');
+        $('.uit-slide__style--' + panel).text($('.uit-slide--' + panel + ' futureStyle').html());
     },
 
     updateTimeline: function() {
