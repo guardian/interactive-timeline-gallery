@@ -73,7 +73,7 @@ module.exports =  {
         }
 
         // pause videos in unactive slides
-        $('.uit-slide:not(.is-active').find('.is-playing').each(function() {
+        $('.uit-slide:not(.is-active)').find('.is-playing').each(function() {
             $(this).removeClass('is-playing');
             $(this).get(0).pause();
 
