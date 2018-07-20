@@ -20,6 +20,12 @@
     background-size: cover;
     background-position: center center;
 
+    .ios &,
+    .android & {
+        bottom: -50px;
+        transform: translateY(-50px);
+    }
+
     .is-active & {
         opacity: 1;
         pointer-events: auto;
@@ -29,7 +35,7 @@
         height: 100%;
     }
 
-    futureStyle {
+    .uit-slide__future-style {
         display: none;
     }
 }

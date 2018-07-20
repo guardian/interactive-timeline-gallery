@@ -30,6 +30,15 @@
         height: 2px;
         background-color: $c-white;
     }
+
+    .ios &,
+    .android & {
+        width: calc(100% - 10px);
+
+        @include mq(mobileLandscape) {
+            width: calc(100% - 20px);
+        }
+    }
 }
 
 .uit-timeline__point-bullet {
@@ -115,6 +124,7 @@
 .uit-timeline__point-year {
     top: 24px;
     font-size: 32px;
+    line-height: 1.2;
 
     @include mq(tablet) {
         font-size: 64px;
@@ -131,6 +141,7 @@
     top: 6px;
     min-width: 140px;
     font-size: 20px;
+    line-height: 1.2;
 
     @include mq(tablet) {
         font-size: 30px;
@@ -211,6 +222,11 @@
         .uit-logo__button {
             background-color: $c-red;
         }
+    }
+
+    .ios &,
+    .android & {
+        display: none;
     }
 }
 

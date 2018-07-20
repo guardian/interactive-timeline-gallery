@@ -9,7 +9,7 @@
             </video>
         </div>
     {{else}}
-        <futureStyle>
+        <div class='uit-slide__future-style'>
             .uit-slide--{{ @key }} .uit-slide-panel {
                 background-image: url({{ media }}/1000.jpg);
             }
@@ -21,7 +21,7 @@
                     }
                 }
             {{/if}}
-        </futureStyle>
+        </div>
         <style class='uit-slide__style uit-slide__style--{{ @key }}'></style>
     {{/if}}
 
