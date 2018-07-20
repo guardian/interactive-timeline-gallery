@@ -38,14 +38,13 @@
   }
 }
 
-.uit-slide-panel__content__inner {
-
+.uit-slide-end__content {
   .uit-slide-panel__title {
     font-size: 18px;
     margin-bottom: 0;
 
     @include mq(desktop) {
-      font-size: 22px;
+        font-size: 22px;
     }
 
     .uit-related-content {
