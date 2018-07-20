@@ -1,109 +1,118 @@
 // outro stuff here// intro stuff here
 .video_card_container {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 
-  @include mq(desktop) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
+    @include mq(desktop) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
 }
 
-.uit-slide-panel__content {
-  &.uit-slide-end__content {
+.uit-related-content_container {
+    max-width: 100%;
+    font-size: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include mq(desktop) {
+        font-size: 20px;
+        padding-top: 20px;
+        flex-wrap: wrap;
+    }
+}
+
+.uit-slide-end__content {
     top: calc(13vh - 22px);
     left: calc(5vh - 22px);
 
     @include mq(desktop) {
-      max-width: 82%;
-      top: calc(20vh - 22px);
-      left: calc(15vh - 22px);
-    }
-  }
-}
-
-.uit-related-content_container {
-  max-width: 100%;
-  font-size: 18px;
-  display: flex;
-  flex-wrap: wrap;
-
-  @include mq(desktop) {
-    font-size: 20px;
-    padding-top: 20px;
-    flex-wrap: wrap;
-  }
-}
-
-.uit-slide-end__content {
-  .uit-slide-panel__title {
-    font-size: 18px;
-    margin-bottom: 0;
-
-    @include mq(desktop) {
-        font-size: 22px;
+        max-width: 82%;
+        top: calc(20vh - 22px);
+        left: calc(15vh - 22px);
     }
 
-    .uit-related-content {
-      color: $c-white;
-      margin-top: 10px;
-      padding-top: 10px;
-      border-top: 1px solid $c-white;
+    .uit-slide-panel__title {
+        font-size: 18px;
+        margin-bottom: 0;
 
-      @include mq(desktop) {
-          margin-top: 30px;
-          padding-top: 20px;
-      }
+        @include mq(desktop) {
+            font-size: 22px;
+        }
+
+        .uit-related-content {
+            color: $c-white;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid $c-white;
+
+            @include mq(desktop) {
+                margin-top: 30px;
+                padding-top: 4px;
+            }
+        }
     }
-  }
+
+    .uit-slide-panel__description {
+        font-size: 20px;
+        line-height: 1;
+    }
 }
 
 .uit-related-content__children {
-    flex: 1 1 45%;
-    margin-right: 10px;
+    flex: 0 0 calc(50% - 10px);
     height: 100%;
 
     @include mq(desktop) {
-      flex: 1 1 23%;
-      margin-top: 0px;
+        flex: 0 0 calc(25% - 15px);
+        margin-top: 0px;
     }
-}
-
-.uit-slide-end__content {
-  .uit-slide-panel__description {
-    font-size: 20px;
-    line-height: 1;
-  }
-}
-
-#bgvid {
-  min-height: 250px;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .uit-related-image {
     width: 100%;
-    height: 100%;
+    padding-top: 60%;
     margin-top: 10px;
-    min-height: 150px;
+    background-size: cover;
+    background-position: center center;
+    border-left: 1px solid $c-white;
+    border-top: 1px solid $c-white;
+    transition: opacity 0.3s linear;
 
-  @include mq(desktop) {
-    width: 100%;
-    height: 100%;
-    margin-bottom: 5px;
-    margin-top: 0px;
-  }
+    @include mq(desktop) {
+        margin-top: 0px;
+    }
+}
+
+.uit-related__title {
+    border-left: 1px solid $c-white;
+    border-top: 1px solid $c-white;
+    padding: 4px 4px 12px 6px;
+    font-size: 18px;
+    color: $c-light-red;
+    transition: color 0.3s linear;
+
+    @include mq(desktop) {
+        font-size: 20px;
+    }
 }
 
 .uit-related-content_link {
-  color: $c-white;
+    color: $c-white;
 
-  &:hover .uit-related-image {
-    opacity: .5;
-  }
+    &:hover {
+        text-decoration: none;
+
+        .uit-related-image {
+            opacity: .5;
+        }
+
+        .uit-related__title {
+            color: $c-white;
+        }
+    }
 }
