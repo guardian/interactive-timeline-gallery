@@ -3,7 +3,7 @@
   width: 100%;
   height: 100%;
 
-  @include mq(tablet) {
+  @include mq(desktop) {
     position: absolute;
     top: 0;
     left: 0;
@@ -17,7 +17,7 @@
     top: calc(13vh - 22px);
     left: calc(5vh - 22px);
 
-    @include mq(tablet) {
+    @include mq(desktop) {
       max-width: 82%;
       top: calc(20vh - 22px);
       left: calc(15vh - 22px);
@@ -31,7 +31,7 @@
   display: flex;
   flex-wrap: wrap;
 
-  @include mq(tablet) {
+  @include mq(desktop) {
     font-size: 20px;
     padding-top: 20px;
     flex-wrap: wrap;
@@ -44,7 +44,7 @@
     font-size: 18px;
     margin-bottom: 40px;
 
-    @include mq(tablet) {
+    @include mq(desktop) {
       font-size: 22px;
     }
 
@@ -55,15 +55,16 @@
       border-top: 1px solid $c-white;
     }
   }
-
 }
 
 .uit-related-content__children {
     flex: 1 1 45%;
     margin-right: 10px;
+    height: 100%;
 
-    @include mq(tablet) {
-      flex: 1 1 25%;
+    @include mq(desktop) {
+      flex: 1 1 23%;
+      margin-top: 0px;
     }
 }
 
@@ -82,14 +83,15 @@
 }
 
 .uit-related-image {
-  width: 150px;
-  height: 150px;
-  margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+    min-height: 150px;
 
-  @include mq(tablet) {
-    width: 180px;
-    height: 180px;
-    margin-bottom: 10px;
+  @include mq(desktop) {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 5px;
     margin-top: 0px;
   }
 }
