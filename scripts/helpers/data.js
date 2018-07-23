@@ -110,6 +110,7 @@ function cleanRelatedMedia(data) {
             if (url.includes('gutools.co.uk')) {
                 data.related[i].image = convertToGridUrl(url);
             }
+            data.related[i].hasCover = true;
         } else {
             data.related[i].image = '';
         }

@@ -33,16 +33,18 @@
                     {{#each related}}
                     <div class='uit-related-content__children'>
                         <a class='uit-related-content_link' href='{{ link }}'>
+                            {{#if hasCover}}
                             <div class='uit-related-image uit-related-image--{{ @key }}'>
                             </div>
+                            <style>
+                            .uit-related-image--{{ @key }} {
+                                background-image: url({{ image }}/500.jpg);
+                            }
+                            </style>
+                            {{/if}}
                             <h2 class='uit-related__title'>{{ headline }}</h2>
                         </a>
                     </div>
-                    <style>
-                    .uit-related-image--{{ @key }} {
-                        background-image: url({{ image }}/500.jpg);
-                    }
-                    </style>
                     {{/each}}
                 </div>
             </div>
