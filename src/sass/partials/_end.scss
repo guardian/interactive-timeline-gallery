@@ -27,8 +27,14 @@
 }
 
 .uit-slide-end__content {
-    top: calc(13vh - 22px);
-    left: calc(5vh - 22px);
+    top: calc(13vh - 2px);
+    left: 10px;
+    right: 10px;
+
+    @include mq(mobileLandscape) {
+        left: 20px;
+        right: 20px;
+    }
 
     @include mq(desktop) {
         max-width: 82%;
@@ -47,7 +53,7 @@
         .uit-related-content {
             color: $c-white;
             margin-top: 10px;
-            padding-top: 10px;
+            padding-top: 2px;
             border-top: 1px solid $c-white;
 
             @include mq(desktop) {
@@ -58,13 +64,13 @@
     }
 
     .uit-slide-panel__description {
-        font-size: 20px;
+        font-size: 18px;
         line-height: 1;
     }
 }
 
 .uit-related-content__children {
-    flex: 0 0 calc(95% - 10px);
+    flex: 0 0 100%;
     height: 90%;
 
     @include mq(desktop) {
@@ -130,5 +136,11 @@
         .uit-related__title {
             color: $c-white;
         }
+    }
+}
+
+.is-last-slide {
+    .uit-slide-panel {
+        overflow-y: scroll;
     }
 }

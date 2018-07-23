@@ -108,11 +108,13 @@ module.exports =  {
 
     setButtonStates: function() {
         $('.uit-arrow').removeClass('is-disabled');
+        $('.uit').removeClass('is-last-slide');
 
         if (activePanel == -1) {
             $('.uit-arrow--back').addClass('is-disabled');
         } else if (activePanel == $('.uit-slide').length -2) {
             $('.uit-arrow--forward').addClass('is-disabled');
+            $('.uit').addClass('is-last-slide');
         }
     },
 

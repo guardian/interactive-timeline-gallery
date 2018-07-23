@@ -266,3 +266,15 @@
     display: inline-block;
     margin-left: -12px;
 }
+
+.is-last-slide {
+    @include mq($until: tablet) {
+        .uit-timeline {
+            opacity: 0;
+        }
+
+        .uit-arrow--back {
+            top: 16px;
+        }
+    }
+}
