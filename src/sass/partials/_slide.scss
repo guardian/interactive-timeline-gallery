@@ -47,7 +47,7 @@
     right: 10px;
     @include banding($c-black);
     font-family: 'Guardian Egyptian Web';
-    font-size: 20px;
+    font-size: 18px;
 
     @include mq(mobileLandscape) {
         left: 20px;
