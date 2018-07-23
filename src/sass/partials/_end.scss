@@ -96,6 +96,14 @@
     }
 }
 
+.uit-related-content__children--3 {
+    display: none;
+
+    @include mq(desktop) {
+        display: flex;
+    }
+}
+
 .uit-related__title {
     border-left: 1px solid $c-white;
     border-top: 1px solid $c-white;

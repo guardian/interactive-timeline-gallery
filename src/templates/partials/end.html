@@ -31,7 +31,7 @@
 
                 <div class='uit-related-content_container'>
                     {{#each related}}
-                    <div class='uit-related-content__children'>
+                    <div class='uit-related-content__children uit-related-content__children--{{ @key }}'>
                         <a class='uit-related-content_link' href='{{ link }}'>
 
                             {{#if hasCover}}
