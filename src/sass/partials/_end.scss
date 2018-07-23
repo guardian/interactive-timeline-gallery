@@ -73,6 +73,14 @@
     }
 }
 
+.uit-related-secondary {
+    display: none;
+
+    @include mq(desktop) {
+        display: flex;
+    }
+}
+
 .uit-related-image {
     width: 100%;
     padding-top: 60%;

@@ -104,13 +104,13 @@ function cleanMedia(data) {
 }
 
 function cleanRelatedMedia(data) {
+    data.related[0].hasCover = true;
     for (var i in data.related) {
         var url = data.related[i].image;
         if (url) {
             if (url.includes('gutools.co.uk')) {
                 data.related[i].image = convertToGridUrl(url);
             }
-            data.related[i].hasCover = true;
         } else {
             data.related[i].image = '';
         }
