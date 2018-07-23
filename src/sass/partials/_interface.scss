@@ -192,6 +192,10 @@
     @include mq(mobileLandscape) {
         left: 20px;
     }
+
+    svg {
+        transform: rotate(90deg);
+    }
 }
 
 .uit-arrow--forward {
@@ -199,6 +203,10 @@
 
     @include mq(mobileLandscape) {
         right: 20px;
+    }
+
+    svg {
+        transform: rotate(-90deg);
     }
 }
 
