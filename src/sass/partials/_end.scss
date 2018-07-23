@@ -73,6 +73,14 @@
     }
 }
 
+.uit-related-secondary {
+    display: none;
+
+    @include mq(desktop) {
+        display: flex;
+    }
+}
+
 .uit-related-image {
     width: 100%;
     padding-top: 60%;
@@ -85,6 +93,14 @@
 
     @include mq(desktop) {
         margin-top: 0px;
+    }
+}
+
+.uit-related-content__children--3 {
+    display: none;
+
+    @include mq(desktop) {
+        display: flex;
     }
 }
 
