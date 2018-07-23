@@ -16,7 +16,7 @@
     color: $c-white;
     font-family: 'Guardian Egyptian Web';
     font-weight: 700;
-    font-size: 22px;
+    font-size: 18px;
     margin-bottom: -3px;
 
     @include mq(tablet) {
@@ -31,6 +31,7 @@
     font-family: 'Guardian Egyptian Web';
     font-weight: 700;
     color: $c-light-red;
+    line-height: 1.3;
 
     @include mq(tablet) {
         font-size: 76px;
@@ -44,9 +45,10 @@
     font-weight: 400;
     font-style: italic;
     color: $c-white;
-    font-size: 22px;
-    line-height: 1.34;
+    font-size: 18px;
+    line-height: 1.32;
     margin-bottom: 12px;
+    margin-right: 80px;
 
     @include mq(tablet) {
         font-size: 26px;

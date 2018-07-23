@@ -117,9 +117,9 @@ module.exports =  {
     },
 
     progress: function(direction) {
-        if (direction === 'back') {
+        if (activePanel > -1 && direction === 'back') {
             activePanel--;
-        } else if (direction === 'forward') {
+        } else if (activePanel < $('.uit-slide').length - 2 && direction === 'forward') {
             activePanel++;
         }
 
