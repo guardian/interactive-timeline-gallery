@@ -64,8 +64,8 @@
 }
 
 .uit-related-content__children {
-    flex: 0 0 calc(50% - 10px);
-    height: 100%;
+    flex: 0 0 calc(95% - 10px);
+    height: 90%;
 
     @include mq(desktop) {
         flex: 0 0 calc(25% - 15px);
