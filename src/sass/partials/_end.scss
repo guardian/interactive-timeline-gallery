@@ -140,7 +140,9 @@
 }
 
 .is-last-slide {
-    .uit-slide-panel {
-        overflow-y: scroll;
+    @include mq($until: tablet) {
+        .uit-slide-panel {
+            overflow-y: scroll;
+        }
     }
 }
